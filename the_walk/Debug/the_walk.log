@@ -1,0 +1,6 @@
+﻿  map.cpp
+C:\Facultate\The-Walk\the_walk\map.cpp(45,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  runGame.cpp
+  the_walk.cpp
+  Generating Code...
+  the_walk.vcxproj -> C:\Facultate\The-Walk\the_walk\Debug\the_walk.exe
