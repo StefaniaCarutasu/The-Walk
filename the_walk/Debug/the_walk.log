@@ -1,13 +1,10 @@
 ﻿  BB8.cpp
   C3PO.cpp
-C:\Facultate\The-Walk\the_walk\C3PO.cpp(40,5): error C2819: type 'map' does not have an overloaded member 'operator ->'
-C:\Facultate\The-Walk\the_walk\map.h(10): message : see declaration of 'map'
-C:\Facultate\The-Walk\the_walk\C3PO.cpp(40,5): message : did you intend to use '.' instead?
-C:\Facultate\The-Walk\the_walk\C3PO.cpp(40,5): error C2232: '->map::finishLine': left operand has 'class' type, use '.'
+C:\Facultate\The-Walk\the_walk\C3PO.cpp(171,2): error C2059: syntax error: '}'
+  map.cpp
+C:\Facultate\The-Walk\the_walk\map.cpp : fatal error C1041: cannot open program database 'C:\Facultate\The-Walk\the_walk\Debug\vc142.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
   R2D2.cpp
   Robot.cpp
-  map.cpp
-C:\Facultate\The-Walk\the_walk\map.cpp(45,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   runGame.cpp
   the_walk.cpp
   Generating Code...

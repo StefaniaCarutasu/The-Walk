@@ -21,6 +21,12 @@ pair<int, int> Robot::getCurrentPosition()
 {
 	return this->position;
 }
+bool Robot::isFinish(int i,int j, map& m)
+{
+	if (i == m.getFinish().first && j == m.getFinish().second)
+		return true;
+	return false;
+}
 void Robot::setNewPosition(const pair<int, int> newPosition)
 {
 	this->position.first = newPosition.first;

@@ -1,7 +1,5 @@
 #include "map.h"
 
-
-
 map::map() : dimensiune(randomGenerator(15, 30))  //constructor cu parametru
 {
 	Matrix = new char * [dimensiune - 1];
@@ -10,6 +8,7 @@ map::map() : dimensiune(randomGenerator(15, 30))  //constructor cu parametru
 	for (int i = 0; i < dimensiune; i++)
 		for (int j = 0; j < dimensiune; j++)
 			Matrix[i][j] = '_';
+	Matrix[0][0] = 'B';
 }
 
 map::map(const map& m)   // constructor de copiere
@@ -60,7 +59,7 @@ void map::generateFinish()   //generez random pozitia liniei de finish
 
 void map::generateItems()   //generez random numarul de items si pozitia lor pe harta
 {
-	int noOfItems = randomGenerator(15, 25);
+	int noOfItems = randomGenerator(20, 40);
 	int i = 0;
 	while(i < noOfItems)
 	{

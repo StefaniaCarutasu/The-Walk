@@ -23,6 +23,7 @@ public:
 	static int getItems();
 	static void incrementItems(unsigned int);
 	pair<int, int> getCurrentPosition();
+	bool isFinish(int,int, map&);
 	virtual string getRobotType() const=0;
 	virtual void newPosition(const map& harta) const = 0;
 	friend class map;
