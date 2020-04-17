@@ -10,7 +10,7 @@ using namespace std;
 class map
 {
 	int dimensiune;
-	char** M;
+	char** Matrix;
 	pair<int, int> finishLine;
 	set<pair<int, int>> items;
 	set<pair<int, int>> traps;
@@ -18,11 +18,13 @@ public:
 	map();
 	map(const map& );
 	virtual  ~map();
+	int getDimension();
+	pair<int, int> getFinish();
+	char** getMatrix();
 	int randomGenerator(int sup, int inf);
 	void generateFinish();
 	void generateItems();
 	void generateTraps();
+	void changeMatrix(pair<int,int>, pair<int, int>); //ilustreaza miscarea robotului
 	friend ostream& operator << (ostream& out, map& M);
 };
-
-

@@ -10,6 +10,7 @@ private:
 	string ID;
 	const pair<int, int> start = { 0,0 };
 	pair<int, int> position;
+	static int items;
 
 protected:
 	void setNewPosition(const pair<int, int>);
@@ -19,9 +20,11 @@ public:
 	Robot(string);
 	virtual ~Robot();
 	string getID();
+	static int getItems();
+	static void incrementItems(unsigned int);
 	pair<int, int> getCurrentPosition();
 	virtual string getRobotType() const=0;
-	virtual pair<int, int> newPosition(const map& harta) const = 0;
+	virtual void newPosition(const map& harta) const = 0;
 	friend class map;
 
 };

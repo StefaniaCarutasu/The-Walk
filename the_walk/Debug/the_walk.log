@@ -1,6 +1,13 @@
-﻿  map.cpp
+﻿  BB8.cpp
+  C3PO.cpp
+C:\Facultate\The-Walk\the_walk\C3PO.cpp(40,5): error C2819: type 'map' does not have an overloaded member 'operator ->'
+C:\Facultate\The-Walk\the_walk\map.h(10): message : see declaration of 'map'
+C:\Facultate\The-Walk\the_walk\C3PO.cpp(40,5): message : did you intend to use '.' instead?
+C:\Facultate\The-Walk\the_walk\C3PO.cpp(40,5): error C2232: '->map::finishLine': left operand has 'class' type, use '.'
+  R2D2.cpp
+  Robot.cpp
+  map.cpp
 C:\Facultate\The-Walk\the_walk\map.cpp(45,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   runGame.cpp
   the_walk.cpp
   Generating Code...
-  the_walk.vcxproj -> C:\Facultate\The-Walk\the_walk\Debug\the_walk.exe
