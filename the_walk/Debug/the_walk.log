@@ -1,34 +1,11 @@
-﻿  Robot.cpp
+﻿  BB8.cpp
+  C3PO.cpp
+  R2D2.cpp
+  Robot.cpp
   runGame.cpp
-C:\Facultate\The-Walk\the_walk\runGame.cpp(20): error C2259: 'C3PO': cannot instantiate abstract class
-C:\Facultate\The-Walk\the_walk\C3PO.h(11): message : see declaration of 'C3PO'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(20): message : due to following members:
-C:\Facultate\The-Walk\the_walk\runGame.cpp(20): message : 'void Robot::newPosition(const map &) const': is abstract
-C:\Facultate\The-Walk\the_walk\Robot.h(28): message : see declaration of 'Robot::newPosition'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(20,15): error C2259: 'C3PO': cannot instantiate abstract class
-C:\Facultate\The-Walk\the_walk\C3PO.h(11): message : see declaration of 'C3PO'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(20,15): message : due to following members:
-C:\Facultate\The-Walk\the_walk\runGame.cpp(20,15): message : 'void Robot::newPosition(const map &) const': is abstract
-C:\Facultate\The-Walk\the_walk\Robot.h(28): message : see declaration of 'Robot::newPosition'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(26): error C2259: 'R2D2': cannot instantiate abstract class
-C:\Facultate\The-Walk\the_walk\R2D2.h(8): message : see declaration of 'R2D2'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(26): message : due to following members:
-C:\Facultate\The-Walk\the_walk\runGame.cpp(26): message : 'void Robot::newPosition(const map &) const': is abstract
-C:\Facultate\The-Walk\the_walk\Robot.h(28): message : see declaration of 'Robot::newPosition'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(26,15): error C2259: 'R2D2': cannot instantiate abstract class
-C:\Facultate\The-Walk\the_walk\R2D2.h(8): message : see declaration of 'R2D2'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(26,15): message : due to following members:
-C:\Facultate\The-Walk\the_walk\runGame.cpp(26,15): message : 'void Robot::newPosition(const map &) const': is abstract
-C:\Facultate\The-Walk\the_walk\Robot.h(28): message : see declaration of 'Robot::newPosition'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(31): error C2259: 'BB8': cannot instantiate abstract class
-C:\Facultate\The-Walk\the_walk\BB8.h(8): message : see declaration of 'BB8'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(31): message : due to following members:
-C:\Facultate\The-Walk\the_walk\runGame.cpp(31): message : 'void Robot::newPosition(const map &) const': is abstract
-C:\Facultate\The-Walk\the_walk\Robot.h(28): message : see declaration of 'Robot::newPosition'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(31,14): error C2259: 'BB8': cannot instantiate abstract class
-C:\Facultate\The-Walk\the_walk\BB8.h(8): message : see declaration of 'BB8'
-C:\Facultate\The-Walk\the_walk\runGame.cpp(31,14): message : due to following members:
-C:\Facultate\The-Walk\the_walk\runGame.cpp(31,14): message : 'void Robot::newPosition(const map &) const': is abstract
-C:\Facultate\The-Walk\the_walk\Robot.h(28): message : see declaration of 'Robot::newPosition'
   the_walk.cpp
   Generating Code...
+BB8.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall BB8::newPosition(class map &)" (?newPosition@BB8@@UAEXAAVmap@@@Z)
+R2D2.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall R2D2::newPosition(class map &)" (?newPosition@R2D2@@UAEXAAVmap@@@Z)
+Robot.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Robot::newPosition(class map &)" (?newPosition@Robot@@UAEXAAVmap@@@Z)
+C:\Facultate\The-Walk\the_walk\Debug\the_walk.exe : fatal error LNK1120: 3 unresolved externals

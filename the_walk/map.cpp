@@ -48,8 +48,16 @@ int map::randomGenerator(int inf, int sup)   //functie care imi genereaza un num
 	return d;
 }
 int map::getDimension() { return this->dimensiune; }
+
 pair<int, int> map::getFinish() { return this->finishLine; }
+
 char** map::getMatrix() { return this->Matrix; }
+
+void map::setFinish(pair<int, int> p)
+{
+	this->getFinish() = p;
+}
+
 void map::generateFinish()   //generez random pozitia liniei de finish
 {
 	this->finishLine.first=randomGenerator(1, this->dimensiune-1);

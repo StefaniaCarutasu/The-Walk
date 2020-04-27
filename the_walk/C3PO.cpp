@@ -2,7 +2,7 @@
 
 C3PO::C3PO(string s): Robot(s){}
 
-void C3PO::newPosition(map& map)
+void C3PO::newPosition(map& map) 
 {
 	pair<int, int> p = { 0,0 };
 	int n = map.getDimension();

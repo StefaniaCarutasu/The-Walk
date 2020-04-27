@@ -38,6 +38,29 @@ runGame::runGame()
 int runGame::noRound = 0;
 void runGame::round()
 {
-
+	noRound++;
+	cout << "Ati inceput runda: " << noRound << "\n";
+	pair<int, int> oldPoz, newPoz;
+	Robot* robot = this->r;
+	oldPoz = robot->getCurrentPosition();
+	robot->newPosition(*m);
+	newPoz = robot->getCurrentPosition();
+	cout << "Noua pozitie pe care se afla robotul este: (" << newPoz.first << ", " << newPoz.second << ")\n";
+	if (newPoz == m->getFinish())
+	{
+		cout << "Felicitari, robotul a ajuns la final!";
+		m->setFinish(make_pair(-1, -1));
+	}
+		
+	if (robot->getVieti() == 0 && newPoz != m->getFinish())
+	{
+		cout << "Robotul nu a juns la final si a pierdut toate vietile! :(";
+		m->setFinish(make_pair(-1, -1));
+	}
+	cout << '\n';
 }
 
+void runGame::currentState()
+{
+	cout << *this->m;
+}

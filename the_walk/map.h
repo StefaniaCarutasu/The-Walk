@@ -20,6 +20,7 @@ public:
 	virtual  ~map();
 	int getDimension();
 	pair<int, int> getFinish();
+	void setFinish(pair<int, int>);
 	char** getMatrix();
 	int randomGenerator(int sup, int inf);
 	void generateFinish();
