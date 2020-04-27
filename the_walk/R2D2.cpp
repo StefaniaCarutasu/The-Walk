@@ -2,3 +2,8 @@
 
 int R2D2::lives = 3;
 R2D2::R2D2(string s): Robot(s) {}
+
+void R2D2::newPosition(map& map)
+{
+
+}

@@ -3,7 +3,8 @@
 #include<iostream>
 #include<stdlib.h>
 #include<stdio.h>
-#include<time.h>
+#include<ctime>
+#include<random>
 #include<set>
 using namespace std;
 

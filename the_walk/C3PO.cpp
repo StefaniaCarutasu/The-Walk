@@ -45,8 +45,11 @@ void C3PO::newPosition(map& map)
 			}
 			else
 			{
-				incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
-				map.getMatrix()[p.first][p.second] = '_';  //scap de capcana
+				if (map.getMatrix()[p.first][p.second] == 'T')
+				{
+					incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
+					map.getMatrix()[p.first][p.second] = '_';  //scap de capcana
+				}
 				if (map.getMatrix()[p.first][p.second] == 'I')   //daca pe noua pozitie gasesc un item il iau 
 				{
 					incrementItems(1);
@@ -100,8 +103,11 @@ void C3PO::newPosition(map& map)
 		}
 		else
 		{
-			incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
-			map.getMatrix()[p.first][p.second] = '_';   //scap de capcana
+			if (map.getMatrix()[p.first][p.second] == 'T')
+			{
+				incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
+				map.getMatrix()[p.first][p.second] = '_';  //scap de capcana
+			}
 			if (map.getMatrix()[p.first][p.second] == 'I')   //daca pe noua pozitie gasesc un item il iau 
 			{
 				incrementItems(1);
@@ -152,8 +158,11 @@ void C3PO::newPosition(map& map)
 		}
 		else
 		{
-			incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
-			map.getMatrix()[p.first][p.second] = '_';  // scap de capcana
+			if (map.getMatrix()[p.first][p.second] == 'T')
+			{
+				incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
+				map.getMatrix()[p.first][p.second] = '_';  //scap de capcana
+			}
 			if (map.getMatrix()[p.first][p.second] == 'I')   //daca pe noua pozitie gasesc un item il iau 
 			{
 				incrementItems(1);
@@ -204,8 +213,11 @@ void C3PO::newPosition(map& map)
 		}
 		else
 		{
-			incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
-			map.getMatrix()[p.first][p.second] = '_';  // scap de capcana
+			if (map.getMatrix()[p.first][p.second] == 'T')
+			{
+				incrementItems(-1);  //continui pe pozitia urmatoare dar ma folosesc de item
+				map.getMatrix()[p.first][p.second] = '_';  //scap de capcana
+			}
 			if (map.getMatrix()[p.first][p.second] == 'I')   //daca pe noua pozitie gasesc un item il iau 
 			{
 				incrementItems(1);

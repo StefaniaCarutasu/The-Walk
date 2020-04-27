@@ -1,11 +1,4 @@
-﻿  BB8.cpp
-  C3PO.cpp
-  R2D2.cpp
-  Robot.cpp
-  runGame.cpp
+﻿  C3PO.cpp
   the_walk.cpp
   Generating Code...
-BB8.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall BB8::newPosition(class map &)" (?newPosition@BB8@@UAEXAAVmap@@@Z)
-R2D2.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall R2D2::newPosition(class map &)" (?newPosition@R2D2@@UAEXAAVmap@@@Z)
-Robot.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Robot::newPosition(class map &)" (?newPosition@Robot@@UAEXAAVmap@@@Z)
-C:\Facultate\The-Walk\the_walk\Debug\the_walk.exe : fatal error LNK1120: 3 unresolved externals
+  the_walk.vcxproj -> C:\Facultate\The-Walk\the_walk\Debug\the_walk.exe

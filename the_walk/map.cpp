@@ -1,6 +1,6 @@
 #include "map.h"
 
-map::map() : dimensiune(randomGenerator(15, 30))  //constructor cu parametru
+map::map() : dimensiune(randomGenerator(15, 30))  //constructor fara parametru
 {
 	Matrix = new char * [dimensiune - 1];
 	for (int i = 0; i < dimensiune; i++)
@@ -8,7 +8,7 @@ map::map() : dimensiune(randomGenerator(15, 30))  //constructor cu parametru
 	for (int i = 0; i < dimensiune; i++)
 		for (int j = 0; j < dimensiune; j++)
 			Matrix[i][j] = '_';
-	Matrix[0][0] = 'B';
+	Matrix[0][0] = 'R';
 }
 
 map::map(const map& m)   // constructor de copiere
@@ -41,11 +41,10 @@ ostream& operator << (ostream& out, map& harta)		//supraincarcare <<
 
 int map::randomGenerator(int inf, int sup)   //functie care imi genereaza un numar random intre inf si sup
 {
-	srand(time(NULL));
-	int d = rand() % sup + inf;
-	if (d > sup)
-		d -= 10;
-	return d;
+	random_device dev;
+	mt19937 rng(dev());
+	uniform_int_distribution<mt19937::result_type> dist(inf, sup); 
+	return dist(rng);
 }
 int map::getDimension() { return this->dimensiune; }
 
@@ -77,7 +76,6 @@ void map::generateItems()   //generez random numarul de items si pozitia lor pe 
 		{
 			this->Matrix[j][k] = 'I';
 			this->items.insert({ j,k });
-			cout << i << ":   " << j << "   " << k<<'\n';
 			i++;
 			
 		}
@@ -98,7 +96,6 @@ void map::generateTraps()   //generez random numarul de capcane si pozitia lor p
 		{
 			this->Matrix[j][k] = 'T';
 			this->traps.insert({ j,k });
-			cout << i << ":   " << j << "   " << k<<'\n';
 			i++;
 		}
 	}
