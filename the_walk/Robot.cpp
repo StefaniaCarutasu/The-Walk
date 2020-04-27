@@ -13,7 +13,7 @@ void Robot::incrementItems(unsigned int i)
 	items += i;
 }
 int Robot::getItems() { return items; }
-string Robot::getID()
+string Robot::getID() const
 {
 	return this->ID;
 }

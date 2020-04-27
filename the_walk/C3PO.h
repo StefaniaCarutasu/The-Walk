@@ -13,7 +13,7 @@ class C3PO : public Robot
 
 public:
 	C3PO(string);
-	string getRobotType() const { return "C3PO"; }
+	string getRobotType() const { return Robot::getID(); }
 	void newPosition(map&);
 };
 

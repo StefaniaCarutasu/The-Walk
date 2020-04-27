@@ -10,7 +10,7 @@ class R2D2 : public Robot
 	static int lives;
 public:
 	R2D2(string);
-	string getRobotType() const { return "R2D2"; }
-	pair<int, int> newPosition(const map& map);
+	string getRobotType() const { return Robot::getID(); }
+	void newPosition(map&);
 };
 

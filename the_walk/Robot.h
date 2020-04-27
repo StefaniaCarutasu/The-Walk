@@ -19,7 +19,7 @@ public:
 	Robot();
 	Robot(string);
 	virtual ~Robot();
-	string getID();
+	string getID() const;
 	static int getItems();
 	static void incrementItems(unsigned int);
 	pair<int, int> getCurrentPosition();

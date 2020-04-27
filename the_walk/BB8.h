@@ -10,7 +10,7 @@ class BB8 : public Robot
 	static int lives;
 public:
 	BB8(string s);
-	string getRobotType() const { return "BB8"; }
-	pair<int, int> newPosition(const map& map);
+	string getRobotType() const { return Robot::getID(); }
+	void newPosition(map&);
 };
 
