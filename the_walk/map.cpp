@@ -54,14 +54,14 @@ char** map::getMatrix() { return this->Matrix; }
 
 void map::setFinish(pair<int, int> p)
 {
-	this->getFinish() = p;
+	this->finishLine = p;
 }
 
 void map::generateFinish()   //generez random pozitia liniei de finish
 {
 	this->finishLine.first=randomGenerator(1, this->dimensiune-1);
 	this->finishLine.second = randomGenerator(1, this->dimensiune-1);
-	Matrix[this->finishLine.first][this->finishLine.second] = 'F';
+	Matrix[this->finishLine.first][this->finishLine.second] = 'J';
 }
 
 void map::generateItems()   //generez random numarul de items si pozitia lor pe harta
@@ -72,7 +72,7 @@ void map::generateItems()   //generez random numarul de items si pozitia lor pe 
 	{
 		int j = randomGenerator(1, this->dimensiune - 1);
 		int k = randomGenerator(1, this->dimensiune - 1);
-		if (Matrix[j][k] != 'F' && Matrix[j][k] != 'I' && k != j)
+		if (Matrix[j][k] != 'J' && Matrix[j][k] != 'I')
 		{
 			this->Matrix[j][k] = 'I';
 			this->items.insert({ j,k });
@@ -92,7 +92,7 @@ void map::generateTraps()   //generez random numarul de capcane si pozitia lor p
 
 		int j = randomGenerator(1, this->dimensiune - 1);
 		int k = randomGenerator(1, this->dimensiune - 1);
-		if (Matrix[j][k] != 'F' && Matrix[j][k] != 'I' && Matrix[j][k] != 'T' && k != j)
+		if (Matrix[j][k] != 'J' && Matrix[j][k] != 'I' && Matrix[j][k] != 'T')
 		{
 			this->Matrix[j][k] = 'T';
 			this->traps.insert({ j,k });

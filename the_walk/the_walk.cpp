@@ -22,8 +22,14 @@ int main()
     {
         game.round();
         game.currentState();
-        cout << "\nDoriti sa continuati?\n";
-        cin >> i;
+        if (game.isFinish())
+            i = 0;
+        else
+        {
+            cout << "\nDoriti sa continuati?\n";
+            cin >> i;
+        }
+       
     } while (i == 1);
     return 0;
 }

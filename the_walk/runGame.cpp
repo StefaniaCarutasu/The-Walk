@@ -2,36 +2,37 @@
 
 runGame::runGame()
 {
-	cout << "Este creata harta pe care se va misca robotul ales.";
-	cout << "Atat dimensiunea cat si pozitiile liniei de finish si ale item-ilor si capcanelor sunt generate aleator.\n\n";
+	cout << "Not so long ago, in an OOP course far, far away, there were three brave droids\ntrying to find a Jedi Master\n\n";
+	//cout << "Este creata harta pe care se va misca robotul ales.";
+	//cout << "Atat dimensiunea cat si pozitiile liniei de finish si ale item-ilor si capcanelor sunt generate aleator.\n\n";
 	m = new map();
 	m->generateFinish();
 	m->generateItems();
 	m->generateTraps();
-	cout << "Acum urmeaza sa alegeti robotul astfel:\n";
-	cout << "-> pentru C-3PO introduceti 1\n";
-	cout << "-> pentru R2-D2 introduceti 2\n";
-	cout << "-> pentru BB-8 introduceti 3\n\n";
+	cout << "Choose the droid:\n";
+	cout << "-> for C-3PO press 1\n";
+	cout << "-> for R2-D2 press 2\n";
+	cout << "-> for BB-8 press 3\n\n";
 	int x;
-	cout << "Introduceti optiunea\n\n";
+	cout << "Choose your figher!\n\n";
 	cin >> x;
 	switch (x)
 	{
 	case 1: 
 	{
-		cout << "Ati ales: C-3PO. SUCCES!\n";
+		cout << "You chose: C-3PO. MAY THE FORCE BE WITH YOU!\n\n";
 		r = new C3PO("1_C-3PO");
 		break;
 	}
 	case 2: 
 	{
-		cout << "Ati ales: R2-D2. SUCCES!\n ";
+		cout << "Ati ales: R2-D2.  MAY THE FORCE BE WITH YOU!\n ";
 		r = new R2D2("2_R2-D2");
 		break;
 	}
 	case 3:
 	{
-		cout << "Ati ales: BB-8. SUCCES!\n";
+		cout << "Ati ales: BB-8.  MAY THE FORCE BE WITH YOU!\n";
 		r = new BB8("3_BB-8");
 		break;
 	}
@@ -44,25 +45,31 @@ int runGame::noRound = 0;
 void runGame::round()
 {
 	noRound++;
-	cout << "Ati inceput runda: " << noRound << "\n";
+	cout << "You started round: " << noRound << "\n";
 	pair<int, int> oldPoz, newPoz;
 	Robot* robot = this->r;
 	oldPoz = robot->getCurrentPosition();
 	robot->newPosition(*m);
 	newPoz = robot->getCurrentPosition();
-	cout << "Noua pozitie pe care se afla robotul este: (" << newPoz.first << ", " << newPoz.second << ")\n";
+	cout << "The new position is: (" << newPoz.first << ", " << newPoz.second << ")\n";
 	if (newPoz == m->getFinish())
 	{
-		cout << "Felicitari, robotul a ajuns la final!";
+		cout << "Congratulations! The droid has found its master!";
 		m->setFinish(make_pair(-1, -1));
 	}
 		
 	if (robot->getVieti() == 0 && newPoz != m->getFinish())
 	{
-		cout << "Robotul nu a juns la final si a pierdut toate vietile! :(";
+		cout << "Your droid did't find his Jedi Master. Better luck next time!";
 		m->setFinish(make_pair(-1, -1));
 	}
 	cout << '\n';
+}
+int runGame::isFinish()
+{
+	if (m->getFinish() == make_pair(-1, -1))
+		return 1;
+	return 0;
 }
 
 void runGame::currentState()

@@ -15,6 +15,7 @@ class runGame
 public:
 	runGame();
 	void round();
+	int isFinish();
 	void currentState();
 	~runGame();
 };
