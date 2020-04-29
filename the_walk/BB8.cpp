@@ -56,12 +56,12 @@ void BB8::newPosition(map& map)
 
 	if (map.getMatrix()[newPoz.first][newPoz.second] == 'T' && getItems() == 0)		//am dat de capcana si nu mai am item uri
 	{
-		if (finish.second < newPoz.second + 3 && this->lives>0)		//vad daca e finish ul pe aceeasi linie si mai am vieti
+		if (finish.second < newPoz.second + 3 && this->lives>1)		//vad daca e finish ul pe aceeasi linie si mai am vieti
 		{
 			map.changeMatrix(p, newPoz);	//schimb matricea si mut robotul pe urmatoarea pozitie
 			this->setNewPosition(newPoz);	//merg pe pozitia urmatoare
 			this->lives--;		//scad numarul de vieti
-			cout << "Ati pierdut o viata. Mai aveti doar " << lives << " vieti\n";
+			cout << "A live you have lost. " << lives << " lives you have\n";
 		}
 		else	//altfel vreau sa stea pe loc o tura ca sa nu mai piarda vieti
 		{
