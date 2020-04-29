@@ -8,7 +8,7 @@ using namespace std;
 class BB8 : public Robot
 {
 	static int lives;
-	static int marginBottom, marginTop, marginLeft, marginRight, row, column;
+	static int marginBottom, marginTop, marginLeft, marginRight, row, column, down, right;
 public:
 	BB8(string s);
 	string getRobotType() const { return Robot::getID(); }

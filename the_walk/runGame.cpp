@@ -14,7 +14,7 @@ runGame::runGame()
 	cout << "-> for R2-D2 press 2\n";
 	cout << "-> for BB-8 press 3\n\n";
 	int x;
-	cout << "Choose your figher!\n\n";
+	cout << "The galaxy awaits your choice!\n\n";
 	cin >> x;
 	switch (x)
 	{
@@ -26,13 +26,13 @@ runGame::runGame()
 	}
 	case 2: 
 	{
-		cout << "Ati ales: R2-D2.  MAY THE FORCE BE WITH YOU!\n ";
+		cout << "You chose: R2-D2.  MAY THE FORCE BE WITH YOU!\n\n ";
 		r = new R2D2("2_R2-D2");
 		break;
 	}
 	case 3:
 	{
-		cout << "Ati ales: BB-8.  MAY THE FORCE BE WITH YOU!\n";
+		cout << "Yout chose: BB-8.  MAY THE FORCE BE WITH YOU!\n\n";
 		r = new BB8("3_BB-8");
 		break;
 	}
@@ -58,7 +58,7 @@ void runGame::round()
 		m->setFinish(make_pair(-1, -1));
 	}
 		
-	if (robot->getVieti() == 0 && newPoz != m->getFinish())
+	if (robot->getLives() == 0 && newPoz != m->getFinish())
 	{
 		cout << "Your droid did't find his Jedi Master. Better luck next time!";
 		m->setFinish(make_pair(-1, -1));

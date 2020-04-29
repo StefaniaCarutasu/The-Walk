@@ -7,7 +7,7 @@ using namespace std;
 
 class R2D2 : public Robot
 {
-	static int sus, jos;
+	static int sus, jos, colectedTraps;
 public:
 	R2D2(string);
 	string getRobotType() const { return Robot::getID(); }

@@ -13,7 +13,7 @@ private:
 	const pair<int, int> start = { 0,0 };
 	pair<int, int> position=start;
 	static int items;
-	static int vieti;
+	static int lives;
 
 protected:
 	void setNewPosition(pair<int, int>);
@@ -23,7 +23,8 @@ public:
 	Robot(string);
 	virtual ~Robot();
 	string getID() const;
-	int getVieti();
+	int getLives();
+	void setLives(int);
 	static int getItems();
 	static void incrementItems(unsigned int);
 	pair<int, int> getCurrentPosition();

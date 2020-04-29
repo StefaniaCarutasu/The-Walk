@@ -2,9 +2,9 @@
 
 map::map() : dimensiune(randomGenerator(15, 30))  //constructor fara parametru
 {
-	Matrix = new char * [dimensiune - 1];
+	Matrix = new char * [dimensiune];
 	for (int i = 0; i < dimensiune; i++)
-		Matrix[i] = new char[dimensiune - 1];
+		Matrix[i] = new char [dimensiune];
 	for (int i = 0; i < dimensiune; i++)
 		for (int j = 0; j < dimensiune; j++)
 			Matrix[i][j] = '_';

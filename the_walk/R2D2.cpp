@@ -3,6 +3,7 @@
 //cand se misca pe diagonalele paralele robotul o ia ori "in sus" ori "in jos" si cu aceste variabile contorizez acest lucru
 int R2D2::sus=1; 
 int R2D2::jos = 0;
+int R2D2::colectedTraps = 0;
 
 R2D2::R2D2(string s): Robot(s) {}
 
@@ -10,7 +11,7 @@ void R2D2::newPosition(map& map)
 {
 	pair<int, int> p = this->getCurrentPosition();
 	pair<int, int> newPoz;
-	int n = map.getDimension();
+	int n = map.getDimension()+1;
 	pair<int, int> finish = map.getFinish();
 
 	if (p.first % 2 == 0 && (p.second == 0 || p.second == n - 1))  
@@ -44,7 +45,7 @@ void R2D2::newPosition(map& map)
 		
 	}
 
-	if (p.second % 2 && (p.first == 0 || p.first == n - 1) && (p.second != 0 && p.second != n - 1))
+	else if (p.second % 2 && (p.first == 0 || p.first == n - 1) && (p.second != 0 && p.second != n - 1))
 		//sunt ori pe marginea superioara ori pe cea inferioara a matricei si are dimensiune para
 		//nu ma aflu in coltul din stanga jos sau dreapta sus unde se intampla altceva
 	{
@@ -59,12 +60,12 @@ void R2D2::newPosition(map& map)
 		}
 	}
 
-	if (p.second != n - 1 && sus == 1) //ma aflu pe diagonala si urc, nu am ajuns inca la ultima coloana
+	else if (p.second != n - 1 && sus == 1) //ma aflu pe diagonala si urc, nu am ajuns inca la ultima coloana
 	{
 		newPoz = { p.first - 1, p.second + 1 };
 	}
 
-	if (p.second != 0 && jos == 1)	//ma aflu pe diagonala si cobor, nu am ajuns inca la prima coloana
+	else if (p.second != 0 && jos == 1)	//ma aflu pe diagonala si cobor, nu am ajuns inca la prima coloana
 	{
 		newPoz = { p.first + 1, p.second - 1 };
 	}
@@ -87,8 +88,34 @@ void R2D2::newPosition(map& map)
 	}*/
 
 
-	
+	if (map.getMatrix()[newPoz.first][newPoz.second] == 'T' && getItems() < 2)		//am dat de capcana si mai am mai putin de 2 item-uri
+	{
+		colectedTraps++;
+		if (colectedTraps == 3)		//daca a trecut prin 3 capcane atunci pierde o viata
+		{
+			Robot::setLives(-1);
+			colectedTraps = 0;
+			if (Robot::getLives() == 2)
+				cout << "Just two lives you have. Careful you must be\n";
+			else cout << "On life left you have. Choose wisely you must\n";
+		}
+		map.changeMatrix(p, newPoz);	//mut robotul in matrice
+		this->setNewPosition(newPoz);	//schimb pozitia
+	}
+	else
+	{
+		if (getItems() > 1 && map.getMatrix()[newPoz.first][newPoz.second] == 'T')
+		{
+			Robot::incrementItems(-2);		//decrementez numarul de itemi
+			map.changeMatrix(p, newPoz);	//mut robotul in matrice
+			this->setNewPosition(newPoz);	//schimb pozitia robotului
+		}
+	}
 
+	if (map.getMatrix()[newPoz.first][newPoz.second] == 'I')
+	{
+		Robot::incrementItems(1);	//daca gaseste item il ia
+	}
 	
 
 }

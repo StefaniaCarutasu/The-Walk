@@ -1,6 +1,6 @@
 #include "Robot.h"
 int Robot::items = 0;
-int Robot::vieti = 3;
+int Robot::lives = 3;
 Robot::Robot() : ID(" "), position({ 0,0 }) {}
 Robot::Robot(string s) : ID("#"+s), position({ 0,0 }) {}
 Robot::~Robot()
@@ -13,7 +13,8 @@ void Robot::incrementItems(unsigned int i)
 	items += i;
 }
 int Robot::getItems() { return items; }
-int Robot::getVieti() { return this->vieti; }
+int Robot::getLives() { return this->lives; }
+void Robot::setLives(int i) { this->lives += i; }
 string Robot::getID() const
 {
 	return this->ID;
