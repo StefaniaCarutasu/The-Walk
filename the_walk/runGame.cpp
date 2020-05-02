@@ -16,6 +16,18 @@ runGame::runGame()
 	int x;
 	cout << "The galaxy awaits your choice!\n\n";
 	cin >> x;
+
+	try
+	{
+		if (x > 3 || x < 1)
+			throw("invalid");
+	}
+
+	catch (string s)
+	{
+		cout << "This is not the droid you are looking for";
+	}
+
 	switch (x)
 	{
 	case 1: 

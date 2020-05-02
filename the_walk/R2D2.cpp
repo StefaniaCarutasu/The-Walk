@@ -110,6 +110,11 @@ void R2D2::newPosition(map& map)
 			map.changeMatrix(p, newPoz);	//mut robotul in matrice
 			this->setNewPosition(newPoz);	//schimb pozitia robotului
 		}
+		else
+		{
+			map.changeMatrix(p, newPoz);	//mut robotul in matrice
+			this->setNewPosition(newPoz);	//schimb pozitia robotului
+		}
 	}
 
 	if (map.getMatrix()[newPoz.first][newPoz.second] == 'I')
