@@ -10,16 +10,16 @@ using namespace std;
 
 class C3PO : public Robot
 {
-
+	static pair<int, int> pozitiaAnterioara;
 public:
 	C3PO(string);
 	string getRobotType() const { return Robot::getID();}
 	void newPosition(map&);
 };
 
-//Strategia lui C-3PO este sa mearga serpui prin matrice, pe linii
-//Va colectiona item urile pe care le va utiliza ulterior cand intalneste capcane
-//Pentru el capcana este ca un zid, nu poate trece pe acolo
-//In cazul in care are item ar putea sa il utilizeze pentru a "sparge" zidul si a merge mai departe 
-//In caz contrar, el incearca sa isi gaseasca alta alta cale. Se poate misca pe linie, coloana sau diagonala
-//In cazul in care este blocat intre capcane, noua pozitie este generata random intr-o parte nevizitata a hartii
+//Strategia lui C-3PO este sa mearga serpuit prin matrice, pe linii
+//Va colectiona atat item urile care il ajuta, dar si capcanele care il slabesc
+//Daca el a colectionat 2 capcane atunci va avea nevoie de item:
+//Daca are 2 item uri atunci le va folosi si va sparge capcana, va merge mai departe
+//Daca are un singur item atunci va putea sterge capcana dar va fi dat o pozitie inapoi
+//Daca are 5 item uri colectionate si mai putin de 3 vieti (cat este maxim) le va schimba pentru o viata suplimentara 

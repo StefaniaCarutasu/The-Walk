@@ -3,8 +3,6 @@
 runGame::runGame()
 {
 	cout << "Not so long ago, in an OOP course far, far away, there were three brave droids\ntrying to find a Jedi Master\n\n";
-	//cout << "Este creata harta pe care se va misca robotul ales.";
-	//cout << "Atat dimensiunea cat si pozitiile liniei de finish si ale item-ilor si capcanelor sunt generate aleator.\n\n";
 	m = new map();
 	m->generateFinish();
 	m->generateItems();

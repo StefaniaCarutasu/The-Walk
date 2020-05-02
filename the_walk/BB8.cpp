@@ -23,7 +23,6 @@ void BB8::newPosition(map& map)
 
 	pair<int, int> p = this->getCurrentPosition();
 	pair<int, int> newPoz;
-	int n = map.getDimension();
 	pair<int, int> finish = map.getFinish();
 
 	//cazul1: ma aflu pe coloana
@@ -32,12 +31,12 @@ void BB8::newPosition(map& map)
 	//daca nu sunt la margine ori merg in sus ori merg in jos
 	if (column) 
 	{
-		if (p.first == marginBottom && down) //am ajuns jos deci ma mut pe linie in dreapta
+		if (p.first == marginBottom && down == 1) //am ajuns jos deci ma mut pe linie in dreapta
 		{
 			newPoz = { p.first, p.second + 1 };
 			row = 1; column = 0;
 			right = 1;
-			marginBottom++;
+			marginBottom--;
 		}
 		else if (p.first == marginTop && down == 0)	//am ajuns sus si ma mut pe linie in stanga
 		{
@@ -118,5 +117,6 @@ void BB8::newPosition(map& map)
 	if (map.getMatrix()[newPoz.first][newPoz.second] == 'I')
 	{
 		Robot::incrementItems(1);	//daca pe noua pozitie gaseste item il ia
+		map.getMatrix()[newPoz.first][newPoz.second] = '_';		//arat ca a luat item ul
 	}
 }

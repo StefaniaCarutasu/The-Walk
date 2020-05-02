@@ -46,6 +46,7 @@ int map::randomGenerator(int inf, int sup)   //functie care imi genereaza un num
 	uniform_int_distribution<mt19937::result_type> dist(inf, sup); 
 	return dist(rng);
 }
+
 int map::getDimension() { return this->dimensiune; }
 
 pair<int, int> map::getFinish() { return this->finishLine; }
