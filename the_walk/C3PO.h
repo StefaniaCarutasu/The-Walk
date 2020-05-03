@@ -13,7 +13,6 @@ class C3PO : public Robot
 	static pair<int, int> pozitiaAnterioara;
 public:
 	C3PO(string);
-	string getRobotType() const { return Robot::getID();}
 	void newPosition(map&);
 };
 

@@ -16,8 +16,6 @@ map::map(const map& m)   // constructor de copiere
 	this->dimensiune = m.dimensiune;
 	this->Matrix = m.Matrix;
 	this->finishLine = m.finishLine;
-	this->items = m.items;
-	this->traps = m.traps;
 }
 
 map::~map()  //destructor
@@ -49,7 +47,7 @@ int map::randomGenerator(int inf, int sup)   //functie care imi genereaza un num
 
 int map::getDimension() { return this->dimensiune; }
 
-pair<int, int> map::getFinish() { return this->finishLine; }
+pair<int, int> map::getFinish() const { return this->finishLine; }
 
 char** map::getMatrix() { return this->Matrix; }
 
@@ -60,9 +58,9 @@ void map::setFinish(pair<int, int> p)
 
 void map::generateFinish()   //generez random pozitia liniei de finish
 {
-	this->finishLine.first=randomGenerator(1, this->dimensiune-1);
-	this->finishLine.second = randomGenerator(1, this->dimensiune-1);
-	Matrix[this->finishLine.first][this->finishLine.second] = 'J';
+	this->finishLine.first=randomGenerator(1, this->dimensiune-1);	//generez linia pe care se afla
+	this->finishLine.second = randomGenerator(1, this->dimensiune-1);	//generez coloana  pe care se afla
+	Matrix[this->finishLine.first][this->finishLine.second] = 'F';	//o marchez cu F
 }
 
 void map::generateItems()   //generez random numarul de items si pozitia lor pe harta
@@ -76,7 +74,6 @@ void map::generateItems()   //generez random numarul de items si pozitia lor pe 
 		if (Matrix[j][k] != 'J' && Matrix[j][k] != 'I')
 		{
 			this->Matrix[j][k] = 'I';
-			this->items.insert({ j,k });
 			i++;
 			
 		}
@@ -86,7 +83,7 @@ void map::generateItems()   //generez random numarul de items si pozitia lor pe 
 
 void map::generateTraps()   //generez random numarul de capcane si pozitia lor pe harta
 {
-	int noOfTraps = randomGenerator(15, 26);
+	int noOfTraps = randomGenerator(20, 40);
 	int i = 0;
 	while (i < noOfTraps)
 	{
@@ -96,14 +93,13 @@ void map::generateTraps()   //generez random numarul de capcane si pozitia lor p
 		if (Matrix[j][k] != 'J' && Matrix[j][k] != 'I' && Matrix[j][k] != 'T')
 		{
 			this->Matrix[j][k] = 'T';
-			this->traps.insert({ j,k });
 			i++;
 		}
 	}
 	
 }
 
-void map::changeMatrix(pair<int, int> oldPosition, pair<int,int> newPosition)
+void map::changeMatrix(pair<int, int> oldPosition, pair<int,int> newPosition)	//functie care ilustreaza mutarea robotului in matrice
 {
 	Matrix[oldPosition.first][oldPosition.second] = '_';
 	Matrix[newPosition.first][newPosition.second] = 'R';

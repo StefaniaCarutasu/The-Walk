@@ -31,27 +31,26 @@ runGame::runGame()
 	case 1: 
 	{
 		cout << "You chose: C-3PO. MAY THE FORCE BE WITH YOU!\n\n";
-		r = new C3PO("1_C-3PO");
+		this->r = new C3PO("1_C-3PO");
 		break;
 	}
 	case 2: 
 	{
 		cout << "You chose: R2-D2.  MAY THE FORCE BE WITH YOU!\n\n ";
-		r = new R2D2("2_R2-D2");
+		this->r = new R2D2("2_R2-D2");
 		break;
 	}
 	case 3:
 	{
 		cout << "Yout chose: BB-8.  MAY THE FORCE BE WITH YOU!\n\n";
-		r = new BB8("3_BB-8");
+		this->r = new BB8("3_BB-8");
 		break;
 	}
-	default:
-		break;
 	}
 }
 
 int runGame::noRound = 0;
+
 void runGame::round()
 {
 	noRound++;

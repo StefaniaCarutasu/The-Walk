@@ -9,7 +9,6 @@ using namespace std;
 
 int main()
 {
- 
     cout << "Starea initiala are urmatoarele caracteristici:\n";
     cout << "-> robotul se afla in coltul din stanga sus al hartii;\n";
     cout << "-> dimensiunea hartii este generata random si va avea dimensiune de maxim 30x30;\n";
@@ -20,8 +19,6 @@ int main()
     int i = 1;
     do
     {
-        game.round();
-        game.currentState();
         if (game.isFinish())
             i = 0;
         else
@@ -29,6 +26,8 @@ int main()
             cout << "\nDoriti sa continuati?\n";
             cin >> i;
         }
+        game.round();
+        game.currentState();
        
     } while (i > 0);
     return 0;

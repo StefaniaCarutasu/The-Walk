@@ -9,14 +9,10 @@ Robot::~Robot()
 	this->ID = " ";
 	this->position = { -1,-1 };
 }
-void Robot::incrementItems(unsigned int i)
-{
-	items += i;
-}
-void Robot::incrementTraps(unsigned int i)
-{
-	traps += i;
-}
+void Robot::incrementItems(unsigned int i) { items += i; }
+
+void Robot::incrementTraps(unsigned int i) { traps += i; }
+
 int Robot::getItems() { return items; }
 
 int Robot::getTraps() { return traps; }
@@ -25,14 +21,8 @@ int Robot::getLives() { return this->lives; }
 
 void Robot::setLives(int i) { this->lives += i; }
 
-string Robot::getID() const
-{
-	return this->ID;
-}
-pair<int, int> Robot::getCurrentPosition()
-{
-	return this->position;
-}
+pair<int, int> Robot::getCurrentPosition() { return this->position; }
+
 bool Robot::isFinish(int i,int j, map& m)
 {
 	if (i == m.getFinish().first && j == m.getFinish().second)

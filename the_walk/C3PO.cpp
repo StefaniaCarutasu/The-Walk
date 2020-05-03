@@ -72,11 +72,11 @@ void C3PO::newPosition(map& map)
 
 	//urmeaza sa setez pozitia anterioara pentru a o putea utiliza in runda  urmatoare, daca este cazul
 	if (newPoz.second == 0 || newPoz.second == n - 1)
-			pozitiaAnterioara = { newPoz.first - 1, newPoz.second };
-		else
-		{
-			if (newPoz.first % 2 == 0)
-				pozitiaAnterioara = { newPoz.first, newPoz.second - 1 };
-			else pozitiaAnterioara = { newPoz.first, newPoz.second + 1 };
-		}
+		pozitiaAnterioara = { newPoz.first - 1, newPoz.second };
+	else
+	{
+		if (newPoz.first % 2 == 0)
+			pozitiaAnterioara = { newPoz.first, newPoz.second - 1 };
+		else pozitiaAnterioara = { newPoz.first, newPoz.second + 1 };
+	}
 }
