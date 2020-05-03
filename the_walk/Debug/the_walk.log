@@ -1,2 +1,9 @@
-﻿  runGame.cpp
+﻿  BB8.cpp
+  C3PO.cpp
+  R2D2.cpp
+  Robot.cpp
+  map.cpp
+  runGame.cpp
+  the_walk.cpp
+  Generating Code...
   the_walk.vcxproj -> C:\Facultate\The-Walk\the_walk\Debug\the_walk.exe

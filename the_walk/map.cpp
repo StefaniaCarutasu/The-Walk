@@ -45,7 +45,7 @@ int map::randomGenerator(int inf, int sup)   //functie care imi genereaza un num
 	return dist(rng);
 }
 
-int map::getDimension() { return this->dimensiune; }
+int map::getDimension() const { return dimensiune; }
 
 pair<int, int> map::getFinish() const { return this->finishLine; }
 

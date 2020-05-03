@@ -17,7 +17,7 @@ public:
 	map();
 	map(const map& );
 	virtual  ~map();
-	int getDimension();
+	int getDimension() const;
 	pair<int, int> getFinish() const;
 	void setFinish(pair<int, int>);
 	char** getMatrix();
